@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>HUBFORCE</title>
+    <!-- BOOTSTRAP CDN -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css" integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4" crossorigin="anonymous">
+  </head>
+<body style="background-color: black;">
+  <!-- NAVIGATION -->
+ <h1 style="color: whitesmoke;text-align: center;">HUBFORCE</h1> 
+  <% if (!user) { %>
+    <nav class="navbar navbar-dark bg-dark">
+  <a class="navbar-brand btn btn-dark" href="/signin">Signin</a>
+  <a class="navbar-brand btn btn-dark" href="/signup">Signup</a>
+</nav>
+  <% } else { %>
+  <nav class="navbar navbar-dark bg-dark">
+    <a class="navbar-brand btn btn-dark" href="/products">Products</a>
+    <a class="navbar-brand btn btn-dark" href="/logout">Logout</a>
+  </nav>
+  <% } %>
+
+  <%if (signinMessage) {%>
+    <p><%= signinMessage %></p>
+  <% } %>
+  <%if (signupMessage) {%>
+    <p><%= signupMessage %></p>
+  <% } %>
+
+  <%- body %>
+</body>
+</html>
